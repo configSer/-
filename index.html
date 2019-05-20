@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .select_style{width:200px;height:38px;line-height:38px;border-radius:2px;border-color:#555;color:#555;margin:5px}
+    </style>
+</head>
+<body>
+    <div class="linkage"></div>
+</body>
+<script src="data.js"></script>
+<script src="index.js"></script>
+<script>
+    selection.init(".linkage",function (obj) {
+      console.log("我的家乡在" + Object.values(obj.province)[0] + Object.values(obj.city)[0] + Object.values(obj.area)[0])
+    },"山西省吕梁市文水县");
+</script>
+</html>
