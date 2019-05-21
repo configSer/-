@@ -28,6 +28,13 @@ var selection = {
       evt.preventDefault();
       let code = evt.target.value;
       selection.obj.province = {[code]: data["100000"][code]};
+      selection.obj.city = "";
+      selection.obj.area = "";
+      if (code >= 810000) {
+        document.querySelector("#area").style = "display:none;";
+      } else {
+        document.querySelector("#area").style = "display:inlineBlock;";
+      }
       callback ? selection.city("#city", evt.target.value, callback) : selection.city("#city", evt.target.value);
       selection.area("#area")
     }
@@ -49,7 +56,11 @@ var selection = {
       evt.preventDefault();
       let code = evt.target.value;
       selection.obj.city = {[code]: data[provinceCode][code]};
-      callback ? selection.area("#area", evt.target.value, callback) : selection.area("#area", evt.target.value)
+      if (code >= "810000"){
+        callback&&callback(selection.obj)
+      } else {
+        callback ? selection.area("#area", evt.target.value, callback) : selection.area("#area", evt.target.value)
+      }
     }
   },
   
