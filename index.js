@@ -30,7 +30,7 @@ var selection = {
       selection.obj.province = {[code]: data["100000"][code]};
       selection.obj.city = "";
       selection.obj.area = "";
-      if (code >= 810000) {
+      if (code >= 710000) {
         document.querySelector("#area").style = "display:none;";
       } else {
         document.querySelector("#area").style = "display:inlineBlock;";
@@ -56,7 +56,7 @@ var selection = {
       evt.preventDefault();
       let code = evt.target.value;
       selection.obj.city = {[code]: data[provinceCode][code]};
-      if (code >= "810000"){
+      if (code >= "710000"){
         callback&&callback(selection.obj)
       } else {
         callback ? selection.area("#area", evt.target.value, callback) : selection.area("#area", evt.target.value)
