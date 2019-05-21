@@ -44,7 +44,7 @@ var selection = {
     o.innerHTML = "请选择市";
     a.appendChild(o);
     let obj = data[provinceCode];
-    if (Object.keys(obj).length === 1) {
+    if (Object.keys(obj).length === 1 && provinceCode !== "990000") {
       o.innerHTML = "请选择区/县";
       let d = data[Object.keys(obj)[0]];
       for (let temp in d) {
