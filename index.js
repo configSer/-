@@ -56,6 +56,7 @@ var selection = {
       evt.preventDefault();
       let code = evt.target.value;
       selection.obj.city = {[code]: data[provinceCode][code]};
+      selection.obj.area = "";
       if (code >= "710000"){
         callback&&callback(selection.obj)
       } else {
